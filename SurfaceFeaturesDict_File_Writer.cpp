@@ -15,7 +15,7 @@ bool SurfaceFeaturesDict_File_Writer::write_surfaceFeaturesDict(const std::strin
         surfaceFeaturesDict_file << "   \\\\    /   O peration     | Website:  https://openfoam.org \n";
         surfaceFeaturesDict_file << "    \\\\  /    A nd           | Version:  8 \n";
         surfaceFeaturesDict_file << "     \\\\/     M anipulation  | \n";
-        surfaceFeaturesDict_file << " \\*---------------------------------------------------------------------------*/ \n";
+        surfaceFeaturesDict_file << "\\*---------------------------------------------------------------------------*/ \n";
         surfaceFeaturesDict_file << "FoamFile \n";
         surfaceFeaturesDict_file << "{ \n";
         surfaceFeaturesDict_file << "    version     2.0; \n";

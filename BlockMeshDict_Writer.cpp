@@ -120,6 +120,14 @@ bool BlockMeshDict_Writer::find_blockMesh_parameters(std::string& inputSTLfileNa
                           grid_box.ymin() + y_dimension / 2,
                           grid_box.zmin() + z_dimension / 2);
 
+    Vertex_location_finder vertexLocationFinder = Vertex_location_finder(polyhedron);
+    while(!vertexLocationFinder.is_point_inside_polyhedron(this->_centroid))
+    {
+
+    }
+
+
+
     double number_of_x_nodes = round(x_dimension / grid_dimension);
     double number_of_y_nodes = round(y_dimension / grid_dimension);
     double number_of_z_nodes = round(z_dimension / grid_dimension);
