@@ -6,13 +6,13 @@ bool MeshQualityDict_Writer::write_meshQualityDict(std::string& fileName_without
     meshQualityDict_file.open(path);
     if(meshQualityDict_file.is_open())
     {
-        meshQualityDict_file << "/*--------------------------------*- C++ -*----------------------------------*/ \n";
+        meshQualityDict_file << "/*--------------------------------*- C++ -*----------------------------------*\\ \n";
         meshQualityDict_file << "  =========                 | \n";
         meshQualityDict_file << "  \\\\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox \n";
         meshQualityDict_file << "   \\\\    /   O peration     | Website:  https://openfoam.org \n";
         meshQualityDict_file << "    \\\\  /    A nd           | Version:  8 \n";
         meshQualityDict_file << "     \\\\/     M anipulation  | \n";
-        meshQualityDict_file << " /*---------------------------------------------------------------------------*/ \n";
+        meshQualityDict_file << " \\*---------------------------------------------------------------------------*/ \n";
         meshQualityDict_file << "FoamFile \n";
         meshQualityDict_file << "{ \n";
         meshQualityDict_file << "    version     2.0; \n";

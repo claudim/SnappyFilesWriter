@@ -9,13 +9,13 @@ bool SurfaceFeaturesDict_File_Writer::write_surfaceFeaturesDict(const std::strin
     surfaceFeaturesDict_file.open(path);
     if(surfaceFeaturesDict_file.is_open())
     {
-        surfaceFeaturesDict_file << "/*--------------------------------*- C++ -*----------------------------------*/ \n";
+        surfaceFeaturesDict_file << "/*--------------------------------*- C++ -*----------------------------------*\\ \n";
         surfaceFeaturesDict_file << "  =========                 | \n";
         surfaceFeaturesDict_file << "  \\\\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox \n";
         surfaceFeaturesDict_file << "   \\\\    /   O peration     | Website:  https://openfoam.org \n";
         surfaceFeaturesDict_file << "    \\\\  /    A nd           | Version:  8 \n";
         surfaceFeaturesDict_file << "     \\\\/     M anipulation  | \n";
-        surfaceFeaturesDict_file << " /*---------------------------------------------------------------------------*/ \n";
+        surfaceFeaturesDict_file << " \\*---------------------------------------------------------------------------*/ \n";
         surfaceFeaturesDict_file << "FoamFile \n";
         surfaceFeaturesDict_file << "{ \n";
         surfaceFeaturesDict_file << "    version     2.0; \n";
