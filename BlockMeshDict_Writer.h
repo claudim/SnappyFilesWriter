@@ -15,6 +15,7 @@
 #include "fstream"
 #include "STL_Reader.h"
 #include "CGAL/Polygon_mesh_processing/bbox.h"
+#include "Vertex_location_finder"
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 typedef CGAL::Point_3<K>                                    Point;

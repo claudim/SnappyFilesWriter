@@ -71,6 +71,8 @@ int main(int argc, char* argv[]) {
         std::map<std::string, std::string > snappyHexMeshDict_parameters;
         snappyHexMeshDict_parameters["FILENAME_WITHOUT_EXTENSION"] = fileName_without_extension;
         snappyHexMeshDict_parameters["FILENAME_WITH_EXTENSION"] = fileName_without_extension + ".stl" ;
+        std::string location_in_mesh = std::to_string(blockMeshDictWriter.getCentroid().x()) +  " " + std::to_string(blockMeshDictWriter.getCentroid().y()) + " " +  std::to_string(blockMeshDictWriter.getCentroid().z());
+        snappyHexMeshDict_parameters["LOCATION_IN_MESH"] = location_in_mesh ;
         SnappyHexMeshDict_Writer snappyHexMeshDictWriter;
         bool is_written_snappyHexMeshDict = snappyHexMeshDictWriter.write_snappyHexMeshDict(snappyHexMeshDict_parameters);
         std::cout<<is_written_snappyHexMeshDict<<std::endl;
