@@ -6,13 +6,13 @@ bool DecomposeParDict_Writer::write_decomposeParDict(std::string& fileName_witho
     decomposeParDict.open(path);
     if(decomposeParDict.is_open())
     {
-        decomposeParDict << "/*--------------------------------*- C++ -*----------------------------------*/ \n";
+        decomposeParDict << "/*--------------------------------*- C++ -*----------------------------------*\\ \n";
         decomposeParDict << "  =========                 | \n";
         decomposeParDict << "  \\\\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox \n";
         decomposeParDict << "   \\\\    /   O peration     | Website:  https://openfoam.org \n";
         decomposeParDict << "    \\\\  /    A nd           | Version:  8 \n";
         decomposeParDict << "     \\\\/     M anipulation  | \n";
-        decomposeParDict << " /*---------------------------------------------------------------------------*/ \n";
+        decomposeParDict << " \\*---------------------------------------------------------------------------*/ \n";
         decomposeParDict << "FoamFile \n";
         decomposeParDict << "{ \n";
         decomposeParDict << "    version     2.0; \n";

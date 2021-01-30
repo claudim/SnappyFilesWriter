@@ -16,13 +16,13 @@ bool BlockMeshDict_Writer::write_blockMeshDict(std::string& inputSTLfileName, in
         std::string path = "./snappyWD/"+ fileName_without_extension + "/system/blockMeshDict";
         blockMeshDict_file.open(path);
         if (blockMeshDict_file.is_open()) {
-            blockMeshDict_file << "/*--------------------------------*- C++ -*----------------------------------*/ \n";
+            blockMeshDict_file << "/*--------------------------------*- C++ -*----------------------------------*\\ \n";
             blockMeshDict_file << "  =========                 | \n";
             blockMeshDict_file << "  \\\\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox \n";
             blockMeshDict_file << "   \\\\    /   O peration     | Website:  https://openfoam.org \n";
             blockMeshDict_file << "    \\\\  /    A nd           | Version:  8 \n";
             blockMeshDict_file << "     \\\\/     M anipulation  | \n";
-            blockMeshDict_file << " /*---------------------------------------------------------------------------*/ \n";
+            blockMeshDict_file << " \\*---------------------------------------------------------------------------*/ \n";
             blockMeshDict_file << "FoamFile \n";
             blockMeshDict_file << "{ \n";
             blockMeshDict_file << "    version     2.0; \n";
