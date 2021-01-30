@@ -13,14 +13,14 @@ bool CGAL::Vertex_location_finder::is_point_inside_polyhedron(const Point &point
     if (inside(pointToBeCheck) == CGAL::ON_BOUNDED_SIDE){
         isInternalPoint = true;
     }
-    if (this->point_internal_check_tolerance > 0 && inside(pointToBeCheck) != CGAL::ON_BOUNDED_SIDE ){
-        isInternalPoint= true;
-        FT squareDistance = AABB_tree.squared_distance(pointToBeCheck);
-        if(squareDistance > std::pow(this->point_internal_check_tolerance, 2))
-        {
-            isInternalPoint = false;
-        }
-    }
+//    if (this->point_internal_check_tolerance > 0 && inside(pointToBeCheck) != CGAL::ON_BOUNDED_SIDE ){
+//        isInternalPoint= true;
+//        double squareDistance = AABB_tree.squared_distance(pointToBeCheck);
+//        if(squareDistance > std::pow(this->point_internal_check_tolerance, 2))
+//        {
+//            isInternalPoint = false;
+//        }
+//    }
     return isInternalPoint;
 }
 
@@ -35,7 +35,7 @@ bool CGAL::Vertex_location_finder::is_point_onBoundary_polyhedron(const Point &p
         //int tolerance = 0.001;
         int tolerance = this->point_internal_check_tolerance;
         isOnBoundaryPoint = true;
-        FT squareDistance = AABB_tree.squared_distance(pointToBeCheck);
+        double squareDistance = AABB_tree.squared_distance(pointToBeCheck);
         if(squareDistance > std::pow(tolerance, 2))
         {
             isOnBoundaryPoint = false;
@@ -48,7 +48,7 @@ bool CGAL::Vertex_location_finder::is_point_external_polyhedron(const Point &poi
     bool isExternalPoint = false;
     //Point_inside inside(polyhedron);
     if (inside(pointToBeCheck) == CGAL::ON_UNBOUNDED_SIDE){
-        FT squareDistance = AABB_tree.squared_distance(pointToBeCheck);
+        double squareDistance = AABB_tree.squared_distance(pointToBeCheck);
         if(squareDistance > 0)
         {
             isExternalPoint = true;
@@ -59,9 +59,9 @@ bool CGAL::Vertex_location_finder::is_point_external_polyhedron(const Point &poi
 
 
 //template<typename Point>
-bool CGAL::Vertex_location_finder::is_point_too_close_to_the_boundary(const Point &point, const FT &distance) {
+bool CGAL::Vertex_location_finder::is_point_too_close_to_the_boundary(const Point &point, const double &distance) {
     bool tooClose = false;
-    FT squareDistance = AABB_tree.squared_distance(point);
+    double squareDistance = AABB_tree.squared_distance(point);
     if(squareDistance < distance)
     {
         tooClose = true;

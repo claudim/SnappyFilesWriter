@@ -15,18 +15,23 @@
 #include "fstream"
 #include "STL_Reader.h"
 #include "CGAL/Polygon_mesh_processing/bbox.h"
-#include "Vertex_location_finder"
+#include "Vertex_location_finder.h"
+#include <random>
+
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 typedef CGAL::Point_3<K>                                    Point;
 
+
 class BlockMeshDict_Writer {
 
 private:
-    Point _centroid;
+    Point _polyhedron_internal_point;
+
+    double fRand(double fMin, double fMax);
 public:
 
-    Point getCentroid() const;
+    Point getPolyhedronInternalPoint() const;
 
     /**
      * @brief Write the blockMeshDict

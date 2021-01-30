@@ -116,14 +116,17 @@ bool BlockMeshDict_Writer::find_blockMesh_parameters(std::string& inputSTLfileNa
     double y_dimension = delta_y_grid;
     double z_dimension = delta_z_grid;
 
-    this->_centroid = Point(grid_box.xmin() + x_dimension / 2,
+    this->_polyhedron_internal_point = Point(grid_box.xmin() + x_dimension / 2,
                           grid_box.ymin() + y_dimension / 2,
                           grid_box.zmin() + z_dimension / 2);
 
-    Vertex_location_finder vertexLocationFinder = Vertex_location_finder(polyhedron);
-    while(!vertexLocationFinder.is_point_inside_polyhedron(this->_centroid))
+    CGAL::Vertex_location_finder vertexLocationFinder = CGAL::Vertex_location_finder(polyhedron);
+    while(!vertexLocationFinder.is_point_inside_polyhedron(this->_polyhedron_internal_point))
     {
-
+        double x_rand = this->fRand(polyhedron_bbox3.xmin(), polyhedron_bbox3.xmax());
+        double y_rand = this->fRand(polyhedron_bbox3.ymin(), polyhedron_bbox3.ymax());
+        double z_rand = this->fRand(polyhedron_bbox3.zmin(), polyhedron_bbox3.zmax());
+        this->_polyhedron_internal_point = Point(x_rand, y_rand, z_rand);
     }
 
 
@@ -145,8 +148,25 @@ bool BlockMeshDict_Writer::find_blockMesh_parameters(std::string& inputSTLfileNa
     return true;
 }
 
-Point BlockMeshDict_Writer::getCentroid() const {
-    return _centroid;
+Point BlockMeshDict_Writer::getPolyhedronInternalPoint() const {
+    return _polyhedron_internal_point;
+}
+
+double BlockMeshDict_Writer::fRand(double fMin, double fMax)
+{
+//    double f = (double)rand() / RAND_MAX;
+//    return fMin + f * (fMax - fMin);
+
+//Type of random number distribution
+    std::uniform_real_distribution<double> dist(fMin, fMax);  //(min, max)
+
+    //Mersenne Twister: Good quality random number generator
+    std::mt19937 rng;
+    //Initialize with non-deterministic seeds
+    rng.seed(std::random_device{}());
+
+    return dist(rng);
+
 }
 
 

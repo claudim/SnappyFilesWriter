@@ -28,7 +28,7 @@ bool SurfaceFeaturesDict_File_Writer::write_surfaceFeaturesDict(const std::strin
         surfaceFeaturesDict_file << "surfaces (\"" << inputFileName << "\");\n";
         surfaceFeaturesDict_file << "\n";
         surfaceFeaturesDict_file << "// Identify a feature when angle between faces < includedAngle \n";
-        surfaceFeaturesDict_file << "includedAngle "<< featuresAngle << "\n";
+        surfaceFeaturesDict_file << "includedAngle "<< featuresAngle << "; \n";
         surfaceFeaturesDict_file << " \n";
         surfaceFeaturesDict_file << "// ************************************************************************* //";
         surfaceFeaturesDict_file.close();

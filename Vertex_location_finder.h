@@ -10,10 +10,9 @@
 #include <CGAL/AABB_traits.h>
 #include <CGAL/AABB_face_graph_triangle_primitive.h>
 #include <CGAL/Side_of_triangle_mesh.h>
-#include <MyLCC.h>
 
 
-//typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
+typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 typedef CGAL::Mesh_polyhedron_3<K>::type Polyhedron;
 typedef CGAL::Side_of_triangle_mesh<Polyhedron, K> Point_inside;
 //typedef CGAL::Linear_cell_complex_for_combinatorial_map<3> LCC_3;
@@ -22,6 +21,7 @@ typedef CGAL::Side_of_triangle_mesh<Polyhedron, K> Point_inside;
 typedef CGAL::AABB_face_graph_triangle_primitive<Polyhedron> Primitive;
 typedef CGAL::AABB_traits<K, Primitive> AABB_Traits;
 typedef CGAL::AABB_tree<AABB_Traits> Tree;
+typedef CGAL::Point_3<K> Point;
 //typedef LCC_3::FT FT;
 
 namespace CGAL {
@@ -53,7 +53,7 @@ namespace CGAL {
 
         // template<typename Point>
         //bool is_point_too_close_to_the_boundary(const Point &point);
-        bool is_point_too_close_to_the_boundary(const Point &point, const FT &distance);
+        bool is_point_too_close_to_the_boundary(const Point &point, const double &distance);
     };
 
 }
