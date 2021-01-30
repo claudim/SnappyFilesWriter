@@ -7,13 +7,13 @@ bool ControlDict_Writer::write_controlDict(std::string& fileName_without_extensi
     controlDict_file.open(path);
     if(controlDict_file.is_open())
     {
-        controlDict_file << "/*--------------------------------*- C++ -*----------------------------------*/ \n";
+        controlDict_file << "/*--------------------------------*- C++ -*----------------------------------*\\ \n";
         controlDict_file << "  =========                 | \n";
         controlDict_file << "  \\\\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox \n";
         controlDict_file << "   \\\\    /   O peration     | Website:  https://openfoam.org \n";
         controlDict_file << "    \\\\  /    A nd           | Version:  8 \n";
         controlDict_file << "     \\\\/     M anipulation  | \n";
-        controlDict_file << " /*---------------------------------------------------------------------------*/ \n";
+        controlDict_file << " \\*---------------------------------------------------------------------------*/ \n";
         controlDict_file << "FoamFile \n";
         controlDict_file << "{ \n";
         controlDict_file << "    version     2.0; \n";
