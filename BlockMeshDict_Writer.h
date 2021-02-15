@@ -27,6 +27,7 @@ class BlockMeshDict_Writer {
 
 private:
     Point _polyhedron_internal_point;
+    int _precision = 4;
 
     double fRand(double fMin, double fMax);
 public:
@@ -41,6 +42,15 @@ public:
     bool write_blockMeshDict(std::string& inputSTLfileName, int resolution);
 
     bool find_blockMesh_parameters(std::string& inputSTLfileName, std::map<std::string, double>& blockMesh_parameters, int resolution);
+
+    /**
+     * @brief Set the precision of digits numbers.
+     *
+     * @param precision The precision of decimal numbers.
+     */
+    void setPrecision(int precision) {
+        _precision = precision;
+    }
 
 };
 
