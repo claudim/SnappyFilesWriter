@@ -27,7 +27,9 @@ class BlockMeshDict_Writer {
 
 private:
     Point _polyhedron_internal_point;
-    int _precision = 4;
+    //int _precision = 4;
+    //int _precision = 3;
+    int _precision = 2;
 
     double fRand(double fMin, double fMax);
 public:
