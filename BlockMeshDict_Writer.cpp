@@ -131,9 +131,9 @@ bool BlockMeshDict_Writer::find_blockMesh_parameters(std::string& inputSTLfileNa
 
 
 
-    double number_of_x_nodes = round(x_dimension / grid_dimension);
-    double number_of_y_nodes = round(y_dimension / grid_dimension);
-    double number_of_z_nodes = round(z_dimension / grid_dimension);
+    double number_of_x_nodes = ceil(x_dimension / grid_dimension);
+    double number_of_y_nodes = ceil(y_dimension / grid_dimension);
+    double number_of_z_nodes = ceil(z_dimension / grid_dimension);
     blockMesh_parameters["x_min"] = std::ceil((polyhedron_bbox3.xmin() * pow(10,_precision)))/pow(10,_precision); // to trunk to the _precision decimal number
     blockMesh_parameters["y_min"] = std::ceil((polyhedron_bbox3.ymin() * pow(10,_precision)))/pow(10,_precision);
     blockMesh_parameters["z_min"] = std::ceil((polyhedron_bbox3.zmin() * pow(10,_precision)))/pow(10,_precision);
@@ -141,7 +141,7 @@ bool BlockMeshDict_Writer::find_blockMesh_parameters(std::string& inputSTLfileNa
     blockMesh_parameters["y_max"] = std::ceil((polyhedron_bbox3.ymax() * pow(10,_precision)))/pow(10,_precision);
     blockMesh_parameters["z_max"] = std::ceil((polyhedron_bbox3.zmax() * pow(10,_precision)))/pow(10,_precision);
 
-//    blockMesh_parameters["x_min"] = polyhedron_bbox3.xmin(); 
+//    blockMesh_parameters["x_min"] = polyhedron_bbox3.xmin();
 //    blockMesh_parameters["y_min"] = polyhedron_bbox3.ymin();
 //    blockMesh_parameters["z_min"] = polyhedron_bbox3.zmin();
 //    blockMesh_parameters["x_max"] = polyhedron_bbox3.xmax();
